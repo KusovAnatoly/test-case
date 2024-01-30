@@ -4,7 +4,13 @@ public class Triangle: Shape
 {
     private readonly double _baseSide;
     private readonly double _height;
-
+    
+    /// <summary>
+    /// Конструктор для класса "Треугольник"
+    /// </summary>
+    /// <param name="baseSide">Основание</param>
+    /// <param name="height">Высота</param>
+    /// <exception cref="ArgumentOutOfRangeException">Выбрасывается, если хотя бы одна из сторон меньше или равна нулю</exception>
     public Triangle(double baseSide, double height)
     {
         if (baseSide <= 0 || height <= 0)
@@ -42,7 +48,6 @@ public class Triangle: Shape
         {
             return true;
         }
-        
         return false;
     }
 }

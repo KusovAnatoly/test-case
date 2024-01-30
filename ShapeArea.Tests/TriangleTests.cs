@@ -1,9 +1,8 @@
+using Xunit;
+
 namespace ShapeArea.Tests;
 
-using Xunit;
-using ShapeArea;
-
-public class TriangleTest
+public class TriangleTests
 {
     [Fact]
     public void TestCalculateArea()
