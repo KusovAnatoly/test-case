@@ -6,11 +6,15 @@ public class Circle: Shape
     
     public Circle(double radius)
     {
+        if (radius < 0)
+        {
+            throw new ArgumentOutOfRangeException("Радиус не может быть отрицательным.");
+        }
         _radius = radius;
     }
     
     /// <summary>
-    /// Returns a calculated circle area
+    /// Вовзращает площадь круга
     /// </summary>
     /// <remarks>
     /// Area = π × radius²

@@ -7,12 +7,16 @@ public class Triangle: Shape
 
     public Triangle(double baseSide, double height)
     {
+        if (baseSide <= 0 || height <= 0)
+        {
+            throw new ArgumentOutOfRangeException("Треугольник не существует.");
+        }
         _baseSide = baseSide;
         _height = height;
     }
     
     /// <summary>
-    /// Returns a calculated triangle area
+    /// Возвращает площадь треугольника
     /// </summary>
     /// <remarks>
     /// Area = (base × height) / 2
@@ -23,16 +27,18 @@ public class Triangle: Shape
     }
 
     /// <summary>
-    /// Returns true if the triangle is squared otherwise false
+    /// Возвращает true если треугольник прямоугольный, иначе false
     /// </summary>
     /// <remarks>
-    /// Uses Pythagorean theorem
+    /// Использует теорему Пифагора
     /// </remarks>
     public bool IsRightAngled()
     {
-        var hypotenuse = Math.Sqrt(Math.Pow(_baseSide, 2) * Math.Pow(_baseSide, 3));
+        // sqrt(64 * 
+        double hypotenuse = Math.Sqrt(Math.Pow(_baseSide, 2) + Math.Pow(_height, 2));
         
-        if (Math.Pow(hypotenuse, 2) == Math.Pow(_baseSide, 2) + Math.Pow(_baseSide, 3))
+        // 64 + 36 = 100
+        if (Math.Pow(hypotenuse, 2) == Math.Pow(_baseSide, 2) + Math.Pow(_height, 2))
         {
             return true;
         }
